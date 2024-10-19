@@ -1,0 +1,95 @@
+Crud Using MySql Database : 
+
+
+Project Structure :
+ems/
+│
+├── app/
+│   ├── controllers/
+│   │   ├── admin/
+│   │   │   ├── 
+│   │   │   └── UserController.js
+│   │   ├── web/
+│   │   │   ├── 
+│   │   │   └── 
+│   │   └── api/
+│   │       ├── 
+│   │       └── UserController.js
+│   │
+│   ├── models/
+│   │   └── User.js
+│   │   └── Company.js
+│   │
+│   ├── routes/
+│   │   ├── web/
+│   │   │   ├── 
+│   │   │   └── 
+│   │   ├── api/
+│   │   │   ├── 
+│   │   │   └── UserRoute.js
+│   │   └── admin/
+│   │       ├── 
+│   │       └── UserRoute.js
+│   │
+│   ├── middleware/
+│   │   └── authMiddleware.js
+│   │   └── 
+│   │
+│   ├── services/
+│   │   └── userService.js
+│   │   └── 
+│   │
+│   ├── utils/
+│   │   └── logger.js
+│   │   └── standardResponse.js
+│   │
+│   ├── validation/
+│   │   └── userValidation.js
+│   │   └── 
+│   │
+│   ├── config/
+│   │   └── db.js          
+│   │   └── serverConfig.js
+│   │
+│   └── app.js
+│   └── dbConnect.js
+│
+├── public/                 
+│   ├── admin/            
+│   │   ├── css/         
+│   │   ├── js/
+│   │   └── images/
+│   │
+│   └── web/          
+│       ├── css/ 
+│       ├── js/       
+│       └── images/
+│
+├── scripts/
+│   └── seed.js
+│
+├── views/
+│   ├── admin/
+│   └── web/
+│
+├── .env
+├── .gitignore
+├── package.json
+├── README.md
+└── server.js
+
+Command 
+1. npm install
+2. npm i express
+3. npm i nodemon // npm install -g nodemon (npx nodemon app.js or nodemon app.js)
+4. npm i mysql2 // Database
+5. npm i sequelize // sequelize
+6. 
+
+
+// 
+1. npm install --save-dev sequelize-cli
+2. npx sequelize-cli init
+3. npx sequelize-cli migration:create --name create-users-table
+4. npx sequelize-cli db:migrate
+
