@@ -1,8 +1,11 @@
 const User = require('../../models/User');
-const validateUserInput = async (input, checkEmailUnique = true) => {
+const validateUserInput = async (input, checkEmailUnique = true, checkPassword = true) => {
     const errors = {};
-    const requiredFields = ['name', 'email', 'dateofbirth', 'password', 'confirm_password'];
 
+    const requiredFields = checkPassword 
+    ? ['name', 'email', 'dateofbirth', 'password', 'confirm_password'] 
+    : ['name', 'email', 'dateofbirth'];
+    
     if (!input || typeof input !== 'object' || Array.isArray(input)) {
         return { general: ['Invalid input data. Expected an object.'] };
     }
@@ -30,7 +33,7 @@ const validateUserInput = async (input, checkEmailUnique = true) => {
         }
     }
 
-    if (input.password !== input.confirm_password) {
+    if ((input.password !== input.confirm_password) && checkPassword) {
         errors.confirm_password = errors.confirm_password || [];
         errors.confirm_password.push('The password and confirm password should be match.');
     }
