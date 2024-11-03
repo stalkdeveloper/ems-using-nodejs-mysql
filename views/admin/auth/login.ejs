@@ -1,0 +1,43 @@
+<div class="l_content">
+    <div class="container px-0">
+        <div class="row items-center">
+            <div class="col-lg-7 d-none d-lg-block">
+                <img src="/admin/images/login-img.svg" alt="" class="img-fluid">
+            </div>
+            <div class="col-lg-5">
+                <div class="log-register-block">
+                   <div class="text-center mb-4">
+                    <a href="#" title="logo" class="header-logo">
+                            <img src="/admin/images/login-img.svg" alt="logo">
+                        </a>
+                   </div>
+                    <h2 class="text-center">Login</h2>
+                    <p class="text-center">Welcome to EMS</p>
+                    <form id="loginForm" action="<%- '/admin/login' %>" method="POST">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input class="form-control" type="email" name="email" id="email" placeholder="Enter your email" tabindex="1" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group input-group-merge">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" tabindex="2">
+                                <div class="input-group-text toggle-password" data-password="false">
+                                    <span class="password-eye"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group d-flex justify-content-between flex-wrap">
+                            <a href="<%- '/admin/register' %>" class="register-text">Don't have an account? Register here.</a>
+                        </div>
+                        <div class="text-start btn-block">
+                            <button class="btn btn-soft-primary w-100 submitBtn" type="submit">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

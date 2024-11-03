@@ -1,7 +1,10 @@
 const User = require('../../models/User');
 const { validateUserInput } = require('../../validation/api/UserValidation')
 const response = require('../../utils/standardResponse');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+
+const JWT_SECRET = process.env.JWT_SECRET_KEY;
+
 
 exports.index = async (req, res) => {
     try {
@@ -18,14 +21,16 @@ exports.index = async (req, res) => {
 
 exports.store = async (req, res) => {
     try {
+        // logger.log(req.body);
         const validationErrors = await validateUserInput(req.body);
         
         if (Object.keys(validationErrors).length > 0) {
             return res.status(400).json(response.errorResponse('Validation failed', validationErrors));
         }
+        const { name, email, dateofbirth, password } = req.body;
 
         const hashedPassword = await bcrypt.hash(password, 10);
-
+        console.log(hashedPassword);
         const user = new User({
             name,
             email,
@@ -72,12 +77,14 @@ exports.update = async (req, res) => {
     try {
         let userId = req.params.id;
         req.body.id = userId;
-        logger.error(req.body);
-
-        const validationErrors = await validateUserInput(req.body, false);
+        let validationErrors;
+        if (req.body.password && req.body.confirm_password) {
+            validationErrors = await validateUserInput(req.body, false, true);
+        } else {
+            validationErrors = await validateUserInput(req.body, false, false);
+        }
 
         if (Object.keys(validationErrors).length > 0) {
-            logger.log('Validation Errors:', validationErrors);
             return res.status(400).json(response.errorResponse('Validation failed', validationErrors));
         }
 

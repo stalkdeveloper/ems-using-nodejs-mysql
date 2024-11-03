@@ -1,0 +1,173 @@
+<div class="leftside-menu">
+    <!-- Topbar Brand Logo -->
+    <div class="logo-topbar">
+        <a href="#" class="logo logo-light">
+            <span class="logo-lg">
+                <img src="/images/default/logo.png" alt="logo">
+            </span>
+            <span class="logo-sm">
+                <img src="/images/default/logo.png" alt="small logo">
+            </span>
+        </a>
+        <a href="#" class="logo logo-dark">
+            <span class="logo-lg">
+                <img src="path/to/default/darklogo.png" alt="dark logo">
+            </span>
+            <span class="logo-sm">
+                <img src="path/to/default/darklogo.png" alt="small logo">
+            </span>
+        </a>
+    </div>
+    <!-- Sidebar -left -->
+    <div class="h-100" id="leftside-menu-container" data-simplebar>
+        <!--- Sidemenu -->
+        <ul class="side-nav">
+            <li class="side-nav-item" data-path="/admin/dashboard">
+                <a href="/admin/dashboard" class="side-nav-link">
+                    <i class="ri-pulse-line"></i>
+                    <span> Dashboard </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item" data-path="/admin/users">
+                <a data-bs-toggle="collapse" href="#sidebarPagesUser" aria-expanded="false" aria-controls="sidebarPagesUser" class="side-nav-link">
+                    <i class="ri-user-line"></i>
+                    <span> User </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPagesUser">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="/admin/users">users </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a class="side-nav-link" data-bs-toggle="collapse" href="#sidebarPagesLocations" aria-expanded="false" aria-controls="sidebarPagesLocations">
+                    <i class="ri-map-pin-line"></i>
+                    <span> Locations </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPagesLocations">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#"> Add New </a>
+                        </li>
+                        <li>
+                            <a href="#"> View All </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a class="side-nav-link" data-bs-toggle="collapse" href="#sidebarPagesServices" aria-expanded="false" aria-controls="sidebarPagesServices">
+                    <i class="ri-shield-check-line"></i>
+                    <span> Services </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPagesServices">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#"> Add New </a>
+                        </li>
+                        <li>
+                            <a href="#"> View All </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a class="side-nav-link" data-bs-toggle="collapse" href="#sidebarPagesServiceBookings" aria-expanded="false" aria-controls="sidebarPagesServiceBookings">
+                    <i class="ri-calendar-todo-line"></i>
+                    <span> Service Bookings </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPagesServiceBookings">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#"> View All </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a class="side-nav-link" data-bs-toggle="collapse" href="#sidebarPagesSocieties" aria-expanded="false" aria-controls="sidebarPagesSocieties">
+                    <i class="ri-group-2-line"></i>
+                    <span> Societies </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPagesSocieties">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#"> Add New </a>
+                        </li>
+                        <li>
+                            <a href="#"> View All </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a class="side-nav-link" data-bs-toggle="collapse" href="#sidebarPagesBuildings" aria-expanded="false" aria-controls="sidebarPagesBuildings">
+                    <i class="ri-building-line"></i>
+                    <span> Buildings </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPagesBuildings">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#"> Add New </a>
+                        </li>
+                        <li>
+                            <a href="#"> View All </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a class="side-nav-link" data-bs-toggle="collapse" href="#sidebarPagesUnits" aria-expanded="false" aria-controls="sidebarPagesUnits">
+                    <i class="ri-ruler-line"></i>
+                    <span> Units </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPagesUnits">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#"> Add New </a>
+                        </li>
+                        <li>
+                            <a href="#"> View All </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    // Get the current path
+    const currentPath = window.location.pathname;
+
+    // Get all sidebar items
+    const sidebarItems = document.querySelectorAll('.side-nav-item');
+
+    sidebarItems.forEach(item => {
+        // Check if the current path matches the data-path attribute
+        if (currentPath.startsWith(item.getAttribute('data-path'))) {
+            item.classList.add('active');
+            
+            // If the item has collapsible content, make sure it's visible
+            const collapseElement = item.querySelector('.collapse');
+            if (collapseElement) {
+                collapseElement.classList.add('show');
+            }
+        }
+    });
+</script>

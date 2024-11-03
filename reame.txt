@@ -69,8 +69,9 @@ ems/
 │   └── seed.js
 │
 ├── views/
-│   ├── admin/
-│   └── web/
+│   ├── admin/ // auth/register.ejs and login.ejs
+│   ├── web/
+│   └── index.ejs/
 │
 ├── .env
 ├── .gitignore
@@ -84,7 +85,8 @@ Command
 3. npm i nodemon // npm install -g nodemon (npx nodemon app.js or nodemon app.js)
 4. npm i mysql2 // Database
 5. npm i sequelize // sequelize
-6. 
+6. npm i ejs
+7. npm i express-ejs-layouts
 
 
 // 

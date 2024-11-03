@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Employee Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully responsive admin theme which can be used to build CRM, CMS, ERP etc." name="description" />
+    <meta content="HIPL" name="author" />
+    <meta name="csrf-token" content="">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <%- include('../admin/partials/hstyle') %>
+</head>
+<body>
+
+    <!-- Begin page -->
+    <div class="wrapper">
+    
+        <!-- ========== Topbar Start ========== -->
+        <%- include('../admin/partials/header') %>
+        <!-- ========== Topbar End ========== -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <%- include('../admin/partials/sidebar') %>
+        <!-- ========== Left Sidebar End ========== -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <!-- Include dynamic content -->
+                    <%- body %>
+                </div>
+                <!-- container -->
+            </div>
+            <!-- content -->
+
+            <%- include('../admin/partials/footer') %>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- <div class="popup_render_div"></div> -->
+
+    <!-- Include custom scripts -->
+    <%- include('../admin/partials/fscript') %>
+
+    <!-- Additional JS -->
+</body>
+</html>
