@@ -86,7 +86,7 @@ exports.login = async (req, res) => {
         res.cookie('token', token, { httpOnly: true });
         return res.redirect('/admin/profile');
     } catch (error) {
-        console.error('Login error:', error); // Log the error for debugging
+        console.error('Login error:', error);
         return res.status(500).json({ success: false, message: 'Server error' });
     }
 };
@@ -102,9 +102,10 @@ exports.logout = async(req, res) => {
 }
 
 exports.profile = async(req, res) => {
-    /* if (!req.user) {
-        return res.redirect('/login');
-    } */
+    logger.log(req.body);
+    if (!req.user) {
+        return res.redirect('/admin/login');
+    }
     res.render('admin/profile', {
         layout: 'layouts/admin'
     });

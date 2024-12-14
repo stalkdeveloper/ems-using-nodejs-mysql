@@ -1,0 +1,117 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Welcome to your profile!</h1>
+    <a href="<%- /admin/logout ?>">Logout</a>
+</body>
+</html>  -->
+<div class="card mt-20">
+    <div class="card-header">
+        <h4 class="mb-0">Profile</h4>
+    </div>
+    <div class="card-body padding-30">
+        <div class="row">
+            <div class="col-lg-5 col-xl-4">
+                <div class="profile-showbox">
+                    <div class="profile-image">
+                            <img src="https://synipcore.hipl-staging3.com/default/user-icon.svg" alt="user-image" class="avatar-lg rounded-circle user-profile-img">
+                    </div>
+                    <div class="profile_details">
+                        <h4 class="ellipsis user-profile-name">Super Admin</h4>
+                        <ul>
+                            <li>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
+                                        <path d="M16.418 0H1.58203C0.711492 0 0 0.708363 0 1.58203V11.0742C0 11.9482 0.711949 12.6562 1.58203 12.6562H16.418C17.2885 12.6562 18 11.9479 18 11.0742V1.58203C18 0.708152 17.2882 0 16.418 0ZM16.175 1.05469L9.40866 7.84315C9.2025 8.04994 8.79761 8.05008 8.59134 7.84315L1.82496 1.05469H16.175ZM1.05469 10.8803V1.77592L5.59213 6.32812L1.05469 10.8803ZM1.82496 11.6016L6.3367 7.07512L7.84438 8.58772C8.46221 9.20756 9.53803 9.20732 10.1557 8.58772L11.6633 7.07516L16.175 11.6016H1.82496ZM16.9453 10.8803L12.4079 6.32812L16.9453 1.77592V10.8803Z" fill="#4f4f4f"></path>
+                                    </svg>
+                                </span> superadmin@gmail.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-xl-8">
+                <div class="profile-tabbox pt-4 pt-lg-0">
+                    <div class="profile-content">
+                        <ul class="nav nav-underline nav-justified gap-0" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#edit-profile" role="tab" aria-controls="home" aria-selected="true" href="#edit-profile">Edit Profile</a>
+                            </li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#change-password" role="tab" aria-controls="home" aria-selected="false" href="#edit-profile" tabindex="-1">Change Password</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <!-- profile -->
+                            <div id="edit-profile" class="tab-pane active show" role="tabpanel">
+                                <div class="user-profile-content">
+                                    <form id="profile-form" enctype="multipart/form-data">
+                                        <input type="hidden" name="_token" value="5lH3o0XfnOTwNvyiSxOykqvx5Yi72fXupM5pQQoA" autocomplete="off">                                            <div class="row row-cols-1">
+                                            <div class="mb-2">
+                                                <label class="form-label" for="name">Name<span class="required"> *</span></label>
+                                                <input type="text" name="name" value="Super Admin" id="name" class="form-control" placeholder="Name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="phone">Profile
+                                                    Image<span class="required"> *</span></label>
+                                                <input type="file" id="image-input" name="profile_image" class="form-control fileInputBoth" accept="image/*">
+
+                                                <div class="img-prevarea mt-3">
+                                                    <img src="https://synipcore.hipl-staging3.com/default/user-icon.svg" width="100px" height="100px">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary submitBtn" type="submit"><iclass="ri-save-line me-1="" fs-16="" lh-1"=""> Update</iclass="ri-save-line></button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Change password -->
+                            <div id="change-password" class="tab-pane" role="tabpanel">
+                                <div class="user-profile-content">
+                                    <form id="change-password-form">
+                                        <input type="hidden" name="_token" value="5lH3o0XfnOTwNvyiSxOykqvx5Yi72fXupM5pQQoA" autocomplete="off">                                            <div class="row row-cols-1">
+                                            <div class="mb-2">
+                                                <label class="form-label" for="current_password">Current Password<span class="required"> *</span></label>
+                                                <div class="input-group input-group-merge">
+                                                    <input type="password" id="current_password" name="current_password" class="form-control" placeholder="Current Password" value="" tabindex="1" autofocus="">
+                                                    <div class="input-group-text toggle-password show-password">
+                                                        <span class="password-eye"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label class="form-label" for="new_password">New Password<span class="required"> *</span></label>
+                                                <div class="input-group input-group-merge">
+                                                    <input type="password" id="new_password" name="password" class="form-control" placeholder="New Password" value="" tabindex="2">
+                                                    <div class="input-group-text toggle-password show-password">
+                                                        <span class="password-eye"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label class="form-label" for="password_confirmation">Confirm New Password<span class="required"> *</span></label>
+                                                <div class="input-group input-group-merge">
+                                                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Confirm New Password" value="" tabindex="3">
+                                                    <div class="input-group-text toggle-password show-password">
+                                                        <span class="password-eye"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary submitBtn" type="submit"><i class="ri-save-line me-1 fs-16 lh-1"></i>
+                                            Update</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
